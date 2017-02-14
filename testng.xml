@@ -9,4 +9,21 @@
         </classes>
     </test>
 
+    <!--   <test name="Example GRID Firefox">
+            <parameter name="browser" value="firefox"/>
+
+            <classes>
+                <class name="example.ExampleGRIDTest"/>
+            </classes>
+        </test>
+
+        <test name="Example GRID Chrome">
+            <parameter name="browser" value="chrome"/>
+
+            <classes>
+                <class name="example.ExampleGRIDTest"/>
+            </classes>
+        </test>-->
+
+
 </suite>
