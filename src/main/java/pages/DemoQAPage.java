@@ -22,4 +22,21 @@ public class DemoQAPage {
         Assert.assertEquals(driver.getTitle(), "Demoqa | Just another WordPress site");
     }
 
+    public static WebElement tab(WebDriver driver, int num) {
+        element = driver.findElement(By.cssSelector(String.format("#ui-id-%d", num)));
+
+        Assert.assertTrue(element.isDisplayed(), "Tab 1 megvan!");
+
+        return element;
+    }
+
+
+    public static WebElement tabTitle(WebDriver driver, int num) {
+        element = driver.findElement(By.cssSelector(String.format("#tabs-%d>b", num)));
+
+        Assert.assertEquals(element.getText(), String.format("Content %d Title", num));
+
+        return element;
+    }
+
 }
