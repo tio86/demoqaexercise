@@ -1,18 +1,26 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
+
+import java.io.File;
 
 public class TestBase {
 
     protected WebDriver driver = null;
 
     protected void initialize() {
+        /* Így lehet megadni direktben, hogy honnan indítsa el a firefoxot */
+        File pathToBinary = new File("/home/kergeodeta/Letöltések/firefox/firefox");
+        FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
 
         System.out.println("SETUP - Böngésző megnyitása");
-        driver = new FirefoxDriver();
+        driver = new FirefoxDriver(ffBinary,firefoxProfile);
     }
 
     protected void evaluateResults(ITestResult result) {
